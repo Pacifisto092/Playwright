@@ -9,9 +9,10 @@ def run(playwright: Playwright) -> None:
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
 
     page = context.new_page()
-    page.goto("https://sso.teachable.com/secure/673/identity/login/otp")
+    page.goto("https://opensource-demo.orangehrmlive.com/")
     page.get_by_test_id("email-input").click()
     page.get_by_test_id("email-input").fill("hello@yandex.ru")
+    page.locator("input:above(:text(\"Login\"))").first.fill("hello playwright")
 
     # Stop tracing and export it into a zip archive.
     context.tracing.stop(path="trace.zip")
