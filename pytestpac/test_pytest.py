@@ -1,4 +1,6 @@
 import re
+import time
+
 from playwright.sync_api import Page, expect
 
 
@@ -9,11 +11,22 @@ def test_example(page: Page) -> None:
     page.get_by_test_id("btn-login").click()
     page.get_by_test_id("otp-input-0").click()
     page.get_by_test_id("otp-input-0").fill("1")
+    # time.sleep(1)
+    # page.reload()
     page.get_by_test_id("otp-input-1").fill("1")
     page.get_by_test_id("otp-input-2").fill("1")
     page.get_by_test_id("otp-input-3").fill("1")
     page.get_by_test_id("otp-input-4").fill("1")
     page.get_by_test_id("otp-input-5").fill("1")
     page.get_by_test_id("btn-code").click()
+    page.go_back()
+    time.sleep(1)
+    page.go_forward()
+    time.sleep(1)
+
+    page.goto("https://the-internet.herokuapp.com/")
+    page.locator("text=Key Presses").click()
+    page.press("#target", "a")
+    time.sleep(2)
 
 print("test execution complete")
