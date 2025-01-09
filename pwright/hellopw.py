@@ -10,8 +10,6 @@ def run(playwright: Playwright) -> None:
 
     page = context.new_page()
     page.goto("https://opensource-demo.orangehrmlive.com/")
-    page.get_by_test_id("email-input").click()
-    page.get_by_test_id("email-input").fill("hello@yandex.ru")
     page.locator("input:above(:text(\"Login\"))").first.fill("hello playwright")     #локатор выше
 
     page.goto("https://www.way2automation.com/angularjs-protractor/registeration/#/login")
