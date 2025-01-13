@@ -23,7 +23,7 @@ def run(playwright: Playwright) -> None:
     page.goto("https://www.selenium-tutorial.com/p/selenium-training")
     page.locator("a:left-of(:text(\"Sign Up\"))").first.click()             #локатор слева
 
-    # Stop tracing and export it into a zip archive.
+    # Stop tracing and export it into a zip archive!
     context.tracing.stop(path="trace.zip")
 
     # ---------------------
