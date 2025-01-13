@@ -14,7 +14,7 @@ def run(playwright: Playwright) -> None:
     page.get_by_test_id("email-input").fill("hello@yandex.ru")
     page.locator("input:above(:text(\"Login\"))").first.fill("hello playwright")
 
-    # Stop tracing and export it into a zip archive.
+    # Stop tracing and export it into a zip archive!
     context.tracing.stop(path="trace.zip")
 
     # ---------------------
