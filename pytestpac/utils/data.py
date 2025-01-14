@@ -1,0 +1,3 @@
+URL = "https://testpages.eviltester.com/styled/validation/input-validation.html"
+
+URL_AVIA = "https://www.aviasales.ru/search/BER1302SZG2?marker=15468.gaasru8877gclidCjwKCAiA7Y28BhAnEiwAAdOJUDeporJBKJnfcJXOQMTTj0QuL9M1ugfIA0ybE3HfCnECf5ROCSIP9hoCQTAQAvD_BwEgclid&gad_source=1&gclid=CjwKCAiA7Y28BhAnEiwAAdOJUDeporJBKJnfcJXOQMTTj0QuL9M1ugfIA0ybE3HfCnECf5ROCSIP9hoCQTAQAvD_BwE"
