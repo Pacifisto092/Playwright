@@ -26,7 +26,8 @@ def test_example(page: Page) -> None:
 
     page.goto("https://the-internet.herokuapp.com/")
     page.locator("text=Key Presses").click()
-    page.press("#target", "a")
+    page.press("#target", "CapsLock")
+    expect(page.locator('#result')).to_have_text("You entered: CAPS_LOCK")
     time.sleep(2)
 
 print("test execution complete")

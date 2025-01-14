@@ -10,11 +10,20 @@ def run(playwright: Playwright) -> None:
 
     page = context.new_page()
     page.goto("https://opensource-demo.orangehrmlive.com/")
-    page.get_by_test_id("email-input").click()
-    page.get_by_test_id("email-input").fill("hello@yandex.ru")
-    page.locator("input:above(:text(\"Login\"))").first.fill("hello playwright")
+    page.locator("input:above(:text(\"Login\"))").first.fill("hello playwright")     #локатор выше
 
-    # Stop tracing and export it into a zip archive.
+    page.goto("https://www.way2automation.com/angularjs-protractor/registeration/#/login")
+    page.locator("input:below(:text(\"Username\"))").first.fill("hello playwright")     #локатор ниже
+
+    page.goto("https://www.way2automation.com/way2auto_jquery/index.php")
+    page.locator("select:near(:text(\"Country\"))").select_option("France")     #локатор рядом
+
+    page.locator("select:right-of(:text(\"Country\"))").select_option("Germany")        #локатор справа
+
+    page.goto("https://www.selenium-tutorial.com/p/selenium-training")
+    page.locator("a:left-of(:text(\"Sign Up\"))").first.click()             #локатор слева
+
+    # Stop tracing and export it into a zip archive!
     context.tracing.stop(path="trace.zip")
 
     # ---------------------
