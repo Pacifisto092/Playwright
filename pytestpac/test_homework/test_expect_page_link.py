@@ -30,5 +30,5 @@ def test_expect_footer_link(page: Page) -> None:
     with page.expect_popup() as page2_info:
         page.get_by_role("link", name="Compendium Developments").click()
     page2 = page2_info.value
-    expect(page2.locator(".simpleThumbGrid")).to_be_visible()
+    expect(page2).to_have_url("https://compendiumdev.co.uk/")
     print("Ссылки футера - OK")
