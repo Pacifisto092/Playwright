@@ -27,6 +27,7 @@ def run(playwright: Playwright) -> None:
 
     # ---------------------
     context.close()
+    context2.close()
     browser.close()
 
 

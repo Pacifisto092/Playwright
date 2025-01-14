@@ -23,7 +23,10 @@ def run(playwright: Playwright) -> None:
 
     # ---------------------
     context.close()
+    context2.close()
     browser.close()
+
+
 
 
 with sync_playwright() as playwright:
