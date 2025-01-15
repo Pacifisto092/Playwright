@@ -20,9 +20,9 @@ def test_example(page: Page) -> None:
     page.get_by_test_id("otp-input-5").fill("1")
     page.get_by_test_id("btn-code").click()
     page.go_back()
-    time.sleep(1)
+    # time.sleep(1)
     page.go_forward()
-    time.sleep(1)
+    # time.sleep(1)
 
     page.goto("https://the-internet.herokuapp.com/")
     page.locator("text=Key Presses").click()
