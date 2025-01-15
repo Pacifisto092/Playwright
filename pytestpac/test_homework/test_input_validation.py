@@ -6,7 +6,6 @@ from ..utils.data import *
 def test_valid_input_validation(page: Page) -> None:
     page.goto(URL)
     """Заполнение полей валидными данными и их отправка"""
-    page.locator("#firstname").click()
     page.locator("#firstname").fill("Vasia")
     page.locator("#surname").fill("Pupkin-Lapukin")
     page.locator("#age").fill("80")
@@ -49,8 +48,7 @@ def test_invalid_input_validation(page: Page) -> None:
     #Скрытие ошибки Last name
     page.locator("#surname").fill("12345678901")
     page.get_by_role("button", name="Submit").click()
-    page.wait_for_timeout(1000)
-    expect(page.locator('[name="surnamevalidation"]')).to_be_hidden()
+    expect(page.locator('[name="surnamevalidation"]')).to_be_hidden(timeout=1000)
     print("Скрытие ошибки Last name - OK")
 
     # #Вызов ошибки Notes
